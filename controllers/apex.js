@@ -6,7 +6,7 @@ const post=async(req,res)=>{
     try{
         let uploadedFiles=0;
         const {section,text,isFile}=req.body;
-        if(!section || !text || isFile===undefined){
+        if(!section || isFile===undefined){
             return res.status(400).json("Did not send in a certain input")
         }
         if(isFile===true || isFile==="true" || isFile==="True"){
