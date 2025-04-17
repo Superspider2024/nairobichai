@@ -100,6 +100,10 @@ const section =async(req,res)=>{
 
         const foundSection = await Posts.find({section}).sort({created: -1 })
 
+        if(!foundSection){
+            return res.status(400).json("Put int he right section name!")
+        }
+
         res.status(200).json({
             section:foundSection
         })
